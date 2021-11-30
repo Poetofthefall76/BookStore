@@ -1,0 +1,14 @@
+{% extends 'book/origin.html' %}
+
+{% block title %}Book:{% endblock %}
+
+{% block content %}
+<div class="detailbook">
+    <h2>{{ object.title }}</h2>
+    <center>{{ object.description }}</center>
+    <br><br><br><br>
+    <h2><a href="/{{ object.pk }}/update">Update?</a></h2>
+    <h2><a href="/{{ object.pk }}/delete">Delete?</a></h2>
+
+</div>
+{% endblock %}
