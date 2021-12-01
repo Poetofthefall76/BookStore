@@ -11,3 +11,5 @@ class BooksAdmin(admin.ModelAdmin):
     # list_filter = ["created_date"]
 
 admin.site.register(models.Books, BooksAdmin)
+admin.site.register(models.Comment)
+
