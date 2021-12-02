@@ -1,13 +1,13 @@
-from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.template.context_processors import request
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, UpdateView, \
     DetailView, DeleteView, CreateView
 from django.views.generic.edit import FormMixin
-
 from . import models, forms
+from bookingem.models import Comment
 from bookingem.forms import CommentForm
+
+
 
 class BookListView(ListView):
     template_name = "book/book_list.html"
@@ -25,18 +25,33 @@ class BookCreateView(CreateView):
     def form_valid(self, form):
         return super().form_valid(form=form)
 
-class BookDetailView(FormMixin, DetailView):
+class BookDetailView(DetailView):
     template_name = "book/book_detail.html"
-    form_class = CommentForm
+    model = models.Books
+    form_class = forms.CommentForm
+
 
     def get_object(self, **kwargs):
         id_ = self.kwargs.get("id")
         return get_object_or_404(models.Books, id=id_)
 
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs["id"]
+        return super().form_valid(form=form)
+
+
+class CommentCreate(CreateView):
+    model = Comment
+    template_name = "book/book_detail.html"
+    extra_context = {"comment": forms.CommentForm}
+
+    def get_context_data(self, **kwargs):   # передача формы
+        context = super(CommentCreate, self).get_context_data(**kwargs)
+        context["comment"] = CommentForm()
+        return context
 
     def get_success_url(self):
-        return reverse_lazy("book-detail", kwargs={"pk": self.get_object().id})
-
+        return redirect, reverse_lazy("book-detail", kwargs={"pk": self.get_object().id})
 
 class BookUpdateView(UpdateView):
     template_name = "book/book_create.html"
@@ -51,6 +66,7 @@ class BookUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse("book:book-list")
+
 
 class BookDeleteView(DeleteView):
     template_name = "book/book_delete.html"
