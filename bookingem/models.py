@@ -17,11 +17,11 @@ class Comment(models.Model):
     update_date = models.DateTimeField(auto_now=True)
     comment = models.ForeignKey(Books,
                                 on_delete=models.CASCADE,
-                             related_name="comment")
+                                related_name="comment")
 
     def __str__(self):
         return f"{self.text}"
 
     def get_absolute_url(self):
-        return reverse("book-detail", args=[self.post.pk])
+        return reverse("book-detail")
 

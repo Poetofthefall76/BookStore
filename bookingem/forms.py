@@ -1,5 +1,6 @@
 from django import forms
 from . import models
+from bookingem.models import Comment
 
 
 class BookForm(forms.ModelForm):
@@ -13,12 +14,14 @@ class BookForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     class Meta:
-        model = models.Comment
-        fields = ("text",)
+        model = Comment
+        fields = ("text", )
 
         widgets = {
             "text": forms.Textarea(attrs={"class": "form-control"})
         }
+
+
 
 # class CommentForm(forms.ModelForm):
 #     class Meta:

@@ -11,19 +11,20 @@
     <br><br><br><br>
 
 
-    <form action="/{{ post.pk }}/comment/" method="POST">
+    <form action="comment/" method="POST">
             {% csrf_token %}
             <label>
-                Comment:
+                Комментарий:
                 <input name="text" type="text">
             </label>
 
-            <input value="Оставьте свой коментарий" type="submit">
+            <input value="Добавить" type="submit">
     </form>
+
 
     {% for i in comments %}
     <hr>
-        <strong>{{ i.create_date }}</strong>
+        <strong>{{ i.date }}</strong>
         <p>{{ i.text }}</p>
     <br>
     {% endfor %}
