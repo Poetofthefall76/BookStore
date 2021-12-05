@@ -38,5 +38,19 @@ body {
 .book {
     margin-top: 60px;
 }
-
+.delete {
+    margin-top: 60px;
+    text-align: center;
+}
+.yes {
+    text-align: center;
+    margin-top: 60px;
+}
+.yes a {
+    font-weight: 600;
+    color: black;
+}
+.create {
+    text-align: center;
+    margin-top: 60px;
 }
