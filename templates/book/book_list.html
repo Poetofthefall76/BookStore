@@ -4,7 +4,10 @@
 {% block title %}Books:{% endblock %}
 
 {% block content %}
-
+<div class="newbook">
+    <br>
+    <h3><a href="/create">Добавить книгу</a></h3>
+</div>
 <div class="origin">
     <h2>Books:</h2>
     {% for i in object_list %}
@@ -13,5 +16,4 @@
     </div>
     {% endfor %}
 </div>
-
 {% endblock %}

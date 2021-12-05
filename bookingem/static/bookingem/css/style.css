@@ -54,3 +54,15 @@ body {
     text-align: center;
     margin-top: 60px;
 }
+.newbook h3 a {
+    text-decoration: none;
+    color: black;
+    transition: color .2s linear
+}
+.newbook {
+    text-align: center;
+    transition: color .2s linear
+}
+.newbook h3 a:hover {
+    color: white;
+}
