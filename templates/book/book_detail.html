@@ -11,8 +11,9 @@
     <br><br><br><br>
 
 
-    <form action="comment/" method="POST">
+    <form class="comments" action="comment/" method="POST">
             {% csrf_token %}
+<!--            {{ form.as_p }}-->
             <label>
                 Комментарий:
                 <input name="text" type="text">
@@ -21,6 +22,7 @@
             <input value="Добавить" type="submit">
     </form>
 
+<!--            <textarea placeholder="Comment..."></textarea>-->
 
     {% for i in comments %}
     <hr>

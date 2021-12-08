@@ -5,9 +5,10 @@
 
 {% block content %}
 
-<form class="create" action="." method="POST">{% csrf_token %}
+<form class="create" action="." method="POST">
+  {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Добавить" />
+  <input class="addbtn" type="submit" value="Добавить" />
 </form>
 
 {% endblock %}

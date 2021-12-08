@@ -1,15 +1,39 @@
 .origin {
     background: linear-gradient(to right, #F6EFD2, #CEAD78);
-    text-align: center
+    text-align: center;
 }
 .detailbook {
     background: linear-gradient(to right, #F6EFD2, #CEAD78);
     text-align: center
 }
+
+* {
+    box-sizing:border-box;
+}
+
+.detailbook textarea {
+    box-sizing:border-box;
+    width:40%;
+    resize: vertical;
+    padding:15px;
+    border-radius:15px;
+    border:0;
+    box-shadow:4px 4px 10px rgba(0,0,0,0.06);
+    height:70px;
+}
+
+
+.comments {
+
+}
+
 .detailbook h2 {
+    text-decoration: overline 3pt;
     height: 50px;
     margin-top: 150px;
     margin: 50px;
+    font-size: 40pt;
+
 }
 .detailbook h3 a {
     text-decoration: none;
@@ -19,13 +43,17 @@
 .detailbook h3 a:hover{
         color: white
 }
+
+
 body {
     background: linear-gradient(to right, #F6EFD2, #CEAD78);
+    font-family: 'Open Sans', sans-serif;
 }
 .origin h2 {
     margin-top: 60px;
     line-height: 0.8;
     text-shadow: 1px 1px #FF0000;
+    font-size: 70pt;
 }
 .book h3 a {
     text-decoration: none;
@@ -50,17 +78,90 @@ body {
     font-weight: 600;
     color: black;
 }
+
+
 .create {
+    font-weight: 900;
+    font-size: 25px;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
+    box-sizing:border-box;
+    width:55%;
+    resize: vertical;
+    padding:30px;
+    border-radius:15px;
+    border:0;
+    height:70px;
 }
-.newbook h3 a {
-    text-decoration: none;
-    color: black;
-    transition: color .2s linear
+
+/*
+.addbtn {
+    font-size: 20px;
+    font-weight: 800;
+    width:20%;
+    transition: .2s linear;
+    border: none;
+    padding: 0;
 }
+
+.addbtn:hover {
+    color: #5e006d;
+}
+*/
+
+.addbtn {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 25px;
+	margin: 0 15px 15px 0;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 50px;
+	height: 46px;
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	color: #444;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%);
+	cursor: pointer;
+	user-select: none;
+	appearance: none;
+	touch-action: manipulation;
+	vertical-align: top;
+	transition: box-shadow 0.2s;
+}
+.addbtn:focus-visible {
+	border: 1px solid #4c51f9;
+	outline: none;
+}
+.addbtn:hover {
+	transition: all 0.2s;
+	box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+}
+.addbtn:active {
+	background-color: #808080;
+}
+.addbtn:disabled {
+	background-color: #eee;
+	border-color: #eee;
+	color: #444;
+	cursor: not-allowed;
+}
+
+
+
+
+
+
 .newbook {
     text-align: center;
+}
+.newbook h3 a {
+    text-decoration: overline 4pt;
+    color: black;
     transition: color .2s linear
 }
 .newbook h3 a:hover {

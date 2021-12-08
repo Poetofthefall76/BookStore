@@ -10,6 +10,10 @@ class BookForm(forms.ModelForm):
             "title",
             "description"
         ]
+        widgets = {
+            "title":forms.TextInput(attrs={"class": "form-control", "placeholder": "Title of the book"}),
+            "description": forms.Textarea(attrs={"class": "form-control", "placeholder": "Description"})
+        }
 
 
 class CommentForm(forms.ModelForm):
@@ -18,18 +22,5 @@ class CommentForm(forms.ModelForm):
         fields = ("text", )
 
         widgets = {
-            "text": forms.Textarea(attrs={"class": "form-control"})
+            "text": forms.Textarea(attrs={"class": "form-control", "placeholder": "Comment..."})
         }
-
-
-
-
-# class CommentForm(forms.ModelForm):
-#     class Meta:
-#         model = Comment
-#         fields = ('text',)
-#     def __init__(self,*args,**kwargs):
-#         super().__init__(*args,**kwargs)
-#         for field in self.fields:
-#             self.fields[field].widget.attrs['class'] = 'form-control'
-#         self.fields['text'].widget = Textarea(attrs={'rows':5})
