@@ -25,15 +25,15 @@ class ParserAnimeView(FormView):
         else:
             return super(ParserAnimeView,self).post(request, *args, **kwargs)
 
-class BooksView(ListView):
-    model = models.Books
+class NovelView(ListView):
+    model = models.Novel
     template_name = "anime/books_list.html"
 
     def get_queryset(self):
-        return models.Books.objects.all()
+        return models.Novel.objects.all()
 
 
-class ParserBooksView(FormView):
+class ParserNovelView(FormView):
     template_name = "anime/books_parser.html"
     form_class = forms.ParserForm
     success_url = "/books/"
@@ -44,4 +44,4 @@ class ParserBooksView(FormView):
             form.parser_data()
             return HttpResponseRedirect(self.success_url)
         else:
-            return super(ParserBooksView,self).post(request, *args, **kwargs)
+            return super(ParserNovelView,self).post(request, *args, **kwargs)

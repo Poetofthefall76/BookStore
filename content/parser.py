@@ -81,7 +81,7 @@ def get_content(html):
         books.append(
             {
                 "title": item.find("div", class_="album-title").get_text(strip=True),
-                "image": HOST + item.find("div", class_="album-img img-resp-sq img-fit").find("img").get("src")
+                "image": HOST_2 + item.find("div", class_="album-img img-resp-sq img-fit").find("img").get("src")
             }
         )
     print(books)

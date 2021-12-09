@@ -24,4 +24,4 @@ class ParserForm(forms.Form):
         elif self.data["media_type"] == "Books":
             books_data = parser()
             for i in books_data:
-                models.Books.objects.create(**i)
+                models.Novel.objects.create(**i)
