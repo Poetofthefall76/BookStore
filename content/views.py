@@ -23,7 +23,9 @@ class ParserAnimeView(FormView):
             form.parser_data()
             return HttpResponseRedirect(self.success_url)
         else:
-            return super(ParserAnimeView,self).post(request, *args, **kwargs)
+            return super(ParserAnimeView, self).post(request, *args, **kwargs)
+
+########################################################################################################################
 
 class NovelView(ListView):
     model = models.Novel
@@ -44,4 +46,4 @@ class ParserNovelView(FormView):
             form.parser_data()
             return HttpResponseRedirect(self.success_url)
         else:
-            return super(ParserNovelView,self).post(request, *args, **kwargs)
+            return super(ParserNovelView, self).post(request, *args, **kwargs)
