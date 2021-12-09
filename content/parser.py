@@ -92,10 +92,10 @@ def get_content(html):
 def parser():
     html = get_html(URL_2)
     if html.status_code == 200:
-        anime = []
+        books = []
         for page in range(0, 1):
             html = get_html(URL_2, params={"page": page})
-            anime.extend(get_content(html.text))
-            return anime
+            books.extend(get_content(html.text))
+            return books
     else:
         raise ValueError("Error in ANIME PARSER")
