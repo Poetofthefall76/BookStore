@@ -34,6 +34,7 @@ class BookDetailView(DetailView):
     template_name = "book/book_detail.html"
     model = models.Books
     form_class = forms.CommentForm
+    # fields = "__all__"
 
 
     def get_object(self, **kwargs):
@@ -55,6 +56,8 @@ def create_comment_view(request: HttpRequest, id):
             return redirect("/")
         else:
             return HttpResponse("Empty field!!!")
+# def get_absolute_url(self):
+#     return reverse("book-detail")
 
 
 
