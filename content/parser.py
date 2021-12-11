@@ -8,21 +8,16 @@ HOST = "https://animekisa.tv"
 
 URL = "https://animekisa.tv/latest/1"
 
+HOST_2 = "https://knigki.net"
+
+URL_2 = "https://knigki.net/audioknigi/"
 
 HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0",
 }
 
-HOST_2 = "https://knigki.net"
 
-URL_2 = "https://knigki.net/audioknigi/"
-
-
-HEADERS_2 = {
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0"
-}
 
 @csrf_exempt
 
@@ -67,7 +62,7 @@ def parser():
 @csrf_exempt
 
 def get_html(url_2, params=""):
-    req = requests.get(url_2, headers=HEADERS_2, params=params)
+    req = requests.get(url_2, headers=HEADERS, params=params)
     return req
 
 @csrf_exempt
