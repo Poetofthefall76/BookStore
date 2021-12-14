@@ -1,0 +1,15 @@
+{% extends 'users/origin.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<div class="container">
+    <form class="login" action="" method="GET">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn" type="Submit">Log In</button>
+    </form>
+</div>
+
+{% endblock %}

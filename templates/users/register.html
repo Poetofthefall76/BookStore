@@ -1,0 +1,17 @@
+{% extends 'users/origin.html' %}
+{% load static %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="reg">Registration</h1>
+        <form class="registerform" action="/register/" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn" type="Submit" value="Register">
+        </form>
+</div>
+
+{% endblock %}

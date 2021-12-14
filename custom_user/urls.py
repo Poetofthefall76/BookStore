@@ -4,10 +4,10 @@ from django.urls import path, include
 from . import views
 
 
-app_name = "content"
+app_name = "users"
 urlpatterns = [
-    path("books/", views.NovelView.as_view(), name="novel"),
-    path("anime/", views.AnimeView.as_view(), name="anime"),
-    path("parser/", views.ParserAnimeView.as_view(), name="parser"),
+    path("register/", views.RegistrationView.as_view(), name="register"),
+    path("users/", views.UserList.as_view(), name="user-list"),
+    path("login/", views.LoginUser.as_view(), name="login"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
