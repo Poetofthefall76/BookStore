@@ -24,8 +24,11 @@ class UserList(ListView):
 
 
 class LoginUser(LoginView):
-    form_class = AuthenticationForm
+    form_class = LoginForm
     template_name = "users/login.html"
+    redirect_authenticated_user = True
+    fields = "__all__"
+
 
     def get_success_url(self):
         return reverse_lazy("users:user-list")
